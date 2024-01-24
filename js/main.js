@@ -144,4 +144,28 @@ jQuery(document).ready(function( $ ) {
 
 // custom code
 
+const contactForm = document.querySelector('.contactForm');
+contactForm.addEventListener('submit', function () {
+  const contactForm = document.querySelector('.contactForm');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      // Get form data
+      const formData = new FormData(contactForm);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const subject = formData.get('subject');
+      const message = formData.get('message');
+
+      // Compose mailto URL
+      const mailtoUrl = `mailto:cresmun@crescent.education?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}%0A%0AFrom:%20${encodeURIComponent(name)}%20(${encodeURIComponent(email)})`;
+
+      // Open default email client
+      window.location.href = mailtoUrl;
+    });
+  }
+});
+
 });
