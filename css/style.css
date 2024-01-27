@@ -511,7 +511,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 #intro h1 {
   color: #fff;
   font-family: "Raleway", sans-serif;
-  font-size: 56px;
+  font-size: 6em;
   font-weight: 600;
   text-transform: uppercase;
 }
